@@ -12,14 +12,9 @@ def my_sum(list_of_numbers):
 
 def shortener(string):
     s = string.split()
-    new_s = ''
-    for word in s:
-        if len(word)<=6:
-            new_s = new_s + str(word)+" "
-        else:new_s = new_s + str(word)[:6] +"* "
-    new_s = new_s.strip()
+    l = [word if len(word)<=6 else str(word)[:6] +"*" for word in s]
+    new_s = ' '.join(l)
     return new_s 
-
 
 
 def compare_ends(words):
