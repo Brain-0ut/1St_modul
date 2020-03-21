@@ -19,7 +19,5 @@ def shortener(string):
 
 def compare_ends(words):
     i = 0
-    for word in words:
-        if len(word)>=2 and word[0] == word[-1]:
-            i+=1
-    return i
+    l = [word for word in words if len(word)>=2 and word[0] == word[-1]]
+    return len(l)
